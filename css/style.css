@@ -86,17 +86,23 @@ body {
   justify-content: center;
   border-radius: 50%;
   background: var(--card-bg);
-  transition: transform 0.3s;
+  transition: transform 0.3s, background-color 0.3s;
 }
 
 .social-icon:hover {
   transform: translateY(-3px);
+  background-color: var(--primary-color);
 }
 
 .social-icon svg {
   width: 24px;
   height: 24px;
   fill: var(--text-color);
+  transition: fill 0.3s;
+}
+
+.social-icon:hover svg {
+  fill: #ffffff;
 }
 
 .projects {
@@ -167,4 +173,99 @@ body {
   .project-grid {
     grid-template-columns: 1fr;
   }
+}
+
+.project-links a {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: var(--primary-color);
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background-color 0.3s;
+}
+
+.project-links a:hover {
+  background-color: #0056b3;
+}
+
+.project-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+.status-text {
+  font-size: 0.9rem;
+  color: var(--primary-color);
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(0, 122, 255, 0.4);
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 6px rgba(0, 122, 255, 0);
+  }
+
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(0, 122, 255, 0);
+  }
+}
+
+.social-icon.xiaohongshu svg {
+  transform: scale(0.85);
+}
+
+.social-icon.jike svg {
+  transform: scale(0.85);
+}
+
+.social-icon.xiaohongshu:hover {
+  background-color: #fe2c55;
+}
+
+.social-icon.bilibili:hover {
+  background-color: #fb7299;
+}
+
+.social-icon.wechat:hover {
+  background-color: #07c160;
+}
+
+.social-icon.jike:hover {
+  background-color: #ffe411;
+}
+
+.social-icon.jike:hover svg path {
+  fill: #000000 !important;
+}
+
+.social-icon.twitter:hover {
+  background-color: #000000;
+}
+
+.social-icon.youtube:hover {
+  background-color: #ff0000;
+}
+
+.social-icon:hover svg {
+  fill: #ffffff;
+}
+
+.social-icon.jike:hover svg path {
+  fill: #000000 !important;
 }
